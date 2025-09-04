@@ -1,0 +1,19 @@
+<a
+  [routerLink]="props.route"
+  [ngClass]="{
+    'bg-gray-100 dark:bg-[#181818]': props.active,
+    'hover:bg-gray-100 dark:hover:bg-[#181818]': !props.active,
+  }"
+  class="flex items-center justify-between gap-2 px-4 py-2 rounded-lg transition-colors text-gray-900 cursor-pointer dark:text-white"
+>  <div class="flex items-center gap-2">
+    <i
+      [class]="props.icon"
+      [ngClass]="{
+        'text-purple-500': props.active,
+        'text-gray-900 dark:text-white': !props.active,
+      }"
+    ></i>
+    <span>{{ props.label }}</span>
+  </div>
+  <i class="fa-solid fa-angle-right" *ngIf="props.active"></i>
+</a>

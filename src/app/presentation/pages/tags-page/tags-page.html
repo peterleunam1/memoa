@@ -1,0 +1,3 @@
+<app-app-layout [title]="(tag$ | async) || ''">
+  <app-note-content [notes]="(filteredNotes$ | async) ?? []"></app-note-content>
+</app-app-layout>

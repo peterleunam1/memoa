@@ -1,0 +1,7 @@
+<nav class="flex flex-col gap-2 w-[250px] border-r border-r-gray-200 p-4 min-h-screen dark:bg-black dark:border-none">
+  <picture class="pb-2 text-2xl font-bold dark:text-white">memoa </picture>
+  <app-list-of-menu-items [items]="menuItems"></app-list-of-menu-items>
+  <span class="h-[0.5px] bg-gray-200 w-full dark:bg-gray-700"></span>
+  <p class="font-bold dark:text-white mt-2">Tags</p>
+<app-list-of-menu-items [items]="(tags$ | async) ?? []"></app-list-of-menu-items>
+</nav>

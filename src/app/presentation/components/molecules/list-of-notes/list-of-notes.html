@@ -1,0 +1,11 @@
+<section class="flex flex-col flex-wrap gap-2">
+  <app-note
+    *ngFor="let note of notes"
+    [title]="note.title"
+    [tags]="note.tags"
+    [lastEdit]="note.lastEdit"
+    [active]="note.id === selectedNoteId"
+    (click)="noteClick.emit(note.id)"
+    [color]="note.color"
+  ></app-note>
+</section>

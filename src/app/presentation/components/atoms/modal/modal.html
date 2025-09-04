@@ -1,0 +1,20 @@
+<div
+  *ngIf="isOpen"
+  class="fixed inset-0 z-10 flex items-center justify-center bg-black/60 bg-opacity-50 transition-opacity duration-300"
+  (click)="handleClose()"
+>
+  <div
+    class="bg-white dark:bg-black rounded-2xl shadow-lg w-full max-w-[520px] p-6 relative transform transition-all duration-300 ease-out scale-95 opacity-0 animate-fade-in max-h-[90vh] overflow-y-auto"
+    (click)="$event.stopPropagation()"
+  >
+    <button
+      (click)="handleClose()"
+      class="cursor-pointer absolute top-3 right-3 text-gray-900 dark:text-white hover:scale-110 dark:hover:text-gray-300"
+    >
+      ✕
+    </button>
+
+    <ng-content></ng-content>
+  </div>
+</div>
+

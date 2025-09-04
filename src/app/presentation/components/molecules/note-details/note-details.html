@@ -1,0 +1,36 @@
+<div
+  class="flex flex-col gap-4 p-5 border-r border-r-gray-200 rounded-2xl w-full"
+  *ngIf="note.id"
+  [ngStyle]="{ 'background-color': note.color }"
+>
+  <h2 class="text-xl font-bold">{{ note.title }}</h2>
+
+  <div class="flex flex-col gap-2">
+    <span class="flex">
+      <div class="w-[150px] flex gap-2">
+        <i class="fa-solid fa-tags"></i> Tags
+      </div>
+      <ul class="flex flex-row gap-1 flex-wrap">
+        <li *ngFor="let tag of note.tags">
+          {{ tag }}{{ note.tags.length - 1 !== note.tags.indexOf(tag) ? ',' : '.' }}
+        </li>
+      </ul>
+    </span>
+
+    <span class="flex" *ngIf="note.lastEdit">
+      <div class="w-[150px] flex gap-2">
+        <i class="fa-regular fa-clock"></i> Last edited
+      </div>
+      {{ note.lastEdit | date: 'dd MMM yyyy' }}
+    </span>
+  </div>
+
+  <app-text-area
+    id="note-content"
+    label="Content"
+    [control]="contentControl"
+    placeholder="Write something..."
+    [border]="false"
+    [withLabel]="false"
+  ></app-text-area>
+</div>

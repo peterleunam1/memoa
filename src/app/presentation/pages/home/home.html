@@ -1,0 +1,4 @@
+<!--  -->
+  <app-app-layout title="All Notes">
+    <app-note-content [notes]="(filteredNotes$ | async) ?? []"></app-note-content>
+  </app-app-layout>
