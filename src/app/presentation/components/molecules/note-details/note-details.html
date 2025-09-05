@@ -6,7 +6,7 @@
   <h2 class="text-xl font-bold">{{ note.title }}</h2>
 
   <div class="flex flex-col gap-2">
-    <span class="flex">
+    <span class="flex" *ngIf="note.tags.length > 0">
       <div class="w-[150px] flex gap-2">
         <i class="fa-solid fa-tags"></i> Tags
       </div>

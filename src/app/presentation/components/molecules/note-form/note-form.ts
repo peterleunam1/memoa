@@ -30,7 +30,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NoteForm {
   private fb = inject(FormBuilder);
-    private route = inject(ActivatedRoute);
 
   noteForm: FormGroup = this.fb.group({
     title: ['', [Validators.required, Validators.minLength(3)]],

@@ -10,5 +10,5 @@ import { Menu } from '../../organisms/menu/menu';
   styleUrl: './app-layout.css'
 })
 export class AppLayout {
-@Input() title = '';
+  @Input() title = '';
 }

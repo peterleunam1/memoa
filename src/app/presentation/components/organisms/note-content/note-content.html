@@ -18,7 +18,7 @@
   </div>
   <div class="flex flex-col p-5 gap-4 w-1/4" *ngIf="selectedNoteId">
     <app-button type="secondary" (click)="handleOpenArchiveModal()">
-      <i class="fa-solid" [ngClass]="currentNote.isArchived ? 'fa-box-open' : 'fa-box-archive'"></i>
+      <i class="fa-solid mr-1" [ngClass]="currentNote.isArchived ? 'fa-box-open' : 'fa-box-archive'"></i>
       {{ currentNote.isArchived ? 'Unarchive Note' : 'Archive Note' }}
     </app-button>
     <app-button type="secondary" (click)="handleOpenDeleteModal()">
