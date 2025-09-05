@@ -1,13 +1,13 @@
 <div class="space-y-2 w-full">
   <label [for]="id" class="text-sm font-medium leading-none dark:text-white" *ngIf="withLabel">
-    {{ label }}
+    {{ label | translate }}
   </label>
 
   <textarea
     [id]="id"
     [formControl]="control"
     [rows]="rows"
-    [placeholder]="placeholder"
+    [placeholder]="placeholder | translate"
     class="flex min-h-[80px] w-full rounded-md bg-transparent px-3 py-2 text-sm 
            placeholder:text-gray-400 focus:border-transparent focus-visible:outline-none 
            focus-visible:ring-2 focus-visible:ring-purple-600 disabled:cursor-not-allowed 
@@ -19,6 +19,6 @@
   ></textarea>
 
   <p *ngIf="error" class="text-sm font-medium text-red-600">
-    {{ error }}
+    {{ error | translate }}
   </p>
 </div>

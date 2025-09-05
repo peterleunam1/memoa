@@ -12,7 +12,7 @@ import { ButtonComponent } from '../../atoms/button/button';
 import { TextInput } from '../../atoms/text-input/text-input';
 import { TextArea } from '../../atoms/text-area/text-area';
 import { TagsInputComponent } from '../../atoms/tags-input/tags-input';
-import { ActivatedRoute } from '@angular/router';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-note-form',
@@ -23,7 +23,9 @@ import { ActivatedRoute } from '@angular/router';
     ButtonComponent,
     TextInput,
     TextArea,
-    TagsInputComponent
+    TagsInputComponent,
+    TranslatePipe,
+    TranslateDirective
   ],
   templateUrl: './note-form.html',
   styleUrl: './note-form.css'
@@ -51,12 +53,12 @@ export class NoteForm {
   // 🔹 Diccionario centralizado de errores
   errorMessages: Record<string, Record<string, string>> = {
     title: {
-      required: 'El título es requerido.',
-      minlength: 'El título debe tener al menos 3 caracteres.'
+      required: 'main.form.titleRequired',
+      minlength: 'main.form.titleMinLength'
     },
     content: {
-      required: 'El contenido es requerido.',
-      minlength: 'El contenido debe tener al menos 5 caracteres.'
+      required: 'main.form.contentRequired',
+      minlength: 'main.form.contentMinLength'
     }
   };
   // 🔹 Getter para evitar repetir noteForm.get(...)

@@ -1,10 +1,9 @@
 <form [formGroup]="noteForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-5">
-  <strong class="text-lg dark:text-white">Crear nueva nota</strong>
-  <!-- Título -->
+  <strong class="text-lg dark:text-white">{{ 'main.form.upperTitle' | translate }}</strong>
   <app-text-input
     id="title"
-    label="Título*"
-    placeholder="Escribe el título"
+    label="main.form.title"
+    placeholder="main.form.titlePlaceholder"
     [control]="titleControl"
     [error]="getErrorMessage('title')"
   >
@@ -12,8 +11,8 @@
 
   <app-text-area
     id="content"
-    label="Contenido*"
-    placeholder="Escribe tu nota..."
+    label="main.form.content"
+    placeholder="main.form.contentPlaceholder"
     [control]="contentControl"
     [error]="getErrorMessage('content')"
     [rows]="4"
@@ -28,7 +27,7 @@
 
   <!-- Selector de color -->
   <div class="space-y-1">
-    <label for="color" class="block text-sm font-medium dark:text-white">Color*</label>
+    <label for="color" class="block text-sm font-medium dark:text-white">{{'main.form.color' | translate}}</label>
     <div class="flex space-x-2">
       <div
         *ngFor="let color of availableColors"
@@ -42,6 +41,6 @@
   </div>
 
   <app-button type="primary" [disabled]="noteForm.invalid" typeButton="submit">
-    Agregar Nota
+    {{ 'main.form.save' | translate }}
   </app-button>
 </form>

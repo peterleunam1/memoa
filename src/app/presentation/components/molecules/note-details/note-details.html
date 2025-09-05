@@ -8,7 +8,7 @@
   <div class="flex flex-col gap-2">
     <span class="flex" *ngIf="note.tags.length > 0">
       <div class="w-[150px] flex gap-2">
-        <i class="fa-solid fa-tags"></i> Tags
+        <i class="fa-solid fa-tags"></i> {{ 'menu.tags' | translate }}
       </div>
       <ul class="flex flex-row gap-1 flex-wrap">
         <li *ngFor="let tag of note.tags">
@@ -19,7 +19,7 @@
 
     <span class="flex" *ngIf="note.lastEdit">
       <div class="w-[150px] flex gap-2">
-        <i class="fa-regular fa-clock"></i> Last edited
+        <i class="fa-regular fa-clock"></i> {{ 'main.lastEdited' | translate }}
       </div>
       {{ note.lastEdit | date: 'dd MMM yyyy' }}
     </span>
@@ -29,7 +29,7 @@
     id="note-content"
     label="Content"
     [control]="contentControl"
-    placeholder="Write something..."
+    placeholder="main.form.contentDetailPlaceholder"
     [border]="false"
     [withLabel]="false"
   ></app-text-area>

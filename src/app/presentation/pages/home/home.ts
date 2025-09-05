@@ -6,7 +6,6 @@ import { NoteModel } from '../../../domain/models/note';
 import { map, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-
 @Component({
   selector: 'app-home',
   imports: [AppLayout, NoteContent, CommonModule],

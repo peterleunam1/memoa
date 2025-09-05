@@ -14,10 +14,11 @@ import {
 } from '../../../states/actions/notes.actions';
 import { Modal } from '../../atoms/modal/modal';
 import { NoteForm } from '../../molecules/note-form/note-form';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-note-content',
-  imports: [ButtonComponent, ListOfNotes, NoteDetails, CommonModule, Modal, NoteForm],
+  imports: [ButtonComponent, ListOfNotes, NoteDetails, CommonModule, Modal, NoteForm, TranslatePipe, TranslateDirective],
   templateUrl: './note-content.html',
   styleUrl: './note-content.css'
 })

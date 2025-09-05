@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TextArea } from '../../atoms/text-area/text-area';
 import { debounceTime, distinctUntilChanged, Subscription } from 'rxjs';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-note-details',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TextArea],
+  imports: [CommonModule, ReactiveFormsModule, TextArea, TranslatePipe],
   templateUrl: './note-details.html',
   styleUrl: './note-details.css'
 })
@@ -22,8 +23,8 @@ export class NoteDetails implements OnInit, OnChanges, OnDestroy {
   ngOnInit() {
     this.sub = this.contentControl.valueChanges
       .pipe(
-        debounceTime(500),          // 👈 espera 500ms tras dejar de escribir
-        distinctUntilChanged()      // 👈 solo emite si realmente cambió
+        debounceTime(500),
+        distinctUntilChanged()
       )
       .subscribe(value => {
         if (this.note) {

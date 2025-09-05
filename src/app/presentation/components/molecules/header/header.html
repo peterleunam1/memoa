@@ -2,8 +2,14 @@
 <header
   class="w-full flex items-center justify-between px-5 h-[70px] border-b border-b-gray-200 dark:text-white dark:border-b-gray-700"
 >
-  <h1 class="text-2xl font-bold">{{ title }}</h1>
+  <h1 class="text-2xl font-bold">{{ title | translate }}</h1>
   <span class="flex items-center gap-4">
+    <app-dropdown
+      [options]="options"
+      [selected]="selectedOption()"
+      (optionSelected)="onLanguageSelected($event)"
+      placeholder="Language"
+    ></app-dropdown>
     <app-dropdown
       [options]="dropdownOptions"
       [selected]="defaultOption"
@@ -12,12 +18,12 @@
     ></app-dropdown>
 
     <div class="flex items-center gap-2">
-      <i class="fa-solid fa-sun mb-1 text-lg text-yellow-300"></i>
+      <i class="fa-solid fa-sun mb-1 text-lg text-gray-400"></i>
       <app-toggle-switch
         [checked]="isDarkMode"
         (checkedChange)="onThemeChange($event)"
       ></app-toggle-switch>
-      <i class="fa-solid fa-moon mb-1 text-lg text-gray-300"></i>
+      <i class="fa-solid fa-moon mb-1 text-lg text-gray-400"></i>
     </div>
   </span>
 </header>

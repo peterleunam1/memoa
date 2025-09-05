@@ -13,7 +13,7 @@
         'text-gray-900 dark:text-white': !props.active,
       }"
     ></i>
-    <span>{{ props.label }}</span>
+    <span>{{ props.label | translate }}</span>
   </div>
   <i class="fa-solid fa-angle-right" *ngIf="props.active"></i>
 </a>

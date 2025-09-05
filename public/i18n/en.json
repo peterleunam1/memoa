@@ -1,0 +1,41 @@
+{
+  "app": {
+    "hello": "hello {{value}}",
+    "title": "Translation Demo"
+  },
+  "menu": {
+    "all": "All Notes",
+    "archived": "Archived Notes",
+    "tags": "Tags"
+  },
+  "main": {
+    "addNote": "+ Create New Note",
+    "archive": "Archive Note",
+    "delete": "Delete Note",
+    "lastEdited": "Last Edited",
+    "empty": "There are no notes registered in the database, you can create a new one.",
+    "confirmDelete": "Are you sure you want to delete the note?",
+    "confirmArchive": "Are you sure you want to archive the note?",
+    "confirmUnArchive": "Are you sure you want to unarchive the note?",
+    "form": {
+      "upperTitle": "Create New Note",
+      "title": "Title",
+      "titlePlaceholder": "Type the title",
+      "titleRequired": "Title is required",
+      "titleMinLength": "Title must have at least 3 characters",
+      "content": "Content",
+      "contentPlaceholder": "Type your note..",
+      "contentRequired": "Content is required",
+      "contentMinLength": "Content must have at least 5 characters",
+      "contentDetailPlaceholder": "Write something..",
+      "tag": "Tags",
+      "tagPlaceholder": "Type or select tags",
+      "color": "Color",
+      "save": "Add Note",
+      "archive": "Archive",
+      "unArchive": "Unarchive",
+      "delete": "Delete",
+      "cancel": "Cancel"
+    }
+  }
+}

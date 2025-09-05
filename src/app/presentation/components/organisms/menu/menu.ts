@@ -5,15 +5,16 @@ import { NoteModel } from '../../../../domain/models/note';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
 
 const menuItems: MenuItemProps[] = [
   {
-    label: 'All Notes',
+    label: 'menu.all',
     icon: 'fa fa-home',
     route: '/'
   },
   {
-    label: 'Archived Notes',
+    label: 'menu.archived',
     icon: 'fa-solid fa-box-archive',
     route: '/archived'
   }
@@ -21,7 +22,7 @@ const menuItems: MenuItemProps[] = [
 
 @Component({
   selector: 'app-menu',
-  imports: [ListOfMenuItems, CommonModule],
+  imports: [ListOfMenuItems, CommonModule, TranslatePipe, TranslateDirective],
   templateUrl: './menu.html',
   styleUrl: './menu.css'
 })
@@ -31,7 +32,6 @@ export class Menu {
 
   menuItems = menuItems;
 
-  // 🔹 Construir dinámicamente las tags únicas en lower case
   tags$ = this.notes$.pipe(
     map((notes: NoteModel[]) => {
       const tagSet = new Set<string>();
@@ -39,10 +39,8 @@ export class Menu {
       notes.forEach(note => {
         note.tags.forEach(tag => tagSet.add(tag.toLowerCase()));
       });
-
-      // Convertimos a objetos MenuItemProps
       return Array.from(tagSet).map(tag => ({
-        label: tag.charAt(0).toUpperCase() + tag.slice(1), // Capitalizar
+        label: tag.charAt(0).toUpperCase() + tag.slice(1), 
         icon: 'fa-solid fa-tags',
         route: `/tags/${tag}`
       }));

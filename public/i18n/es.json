@@ -1,0 +1,42 @@
+{
+  "app": {
+    "hello": "hola {{value}}",
+    "title": "Demo de Traducción"
+  },
+  "menu": {
+    "all": "Todas",
+    "archived": "Archivadas",
+    "tags": "Etiquetas"
+  },
+  "main": {
+    "addNote": "+ Crear Nueva Nota",
+    "archive": "Archivar Nota",
+    "unArchive": "Desarchivar Nota",
+    "delete": "Borrar Nota",
+    "lastEdited": "Ultima edición",
+    "empty": "Aun no hay notas registradas en la base de datos, puedes crear una nueva.",
+    "confirmDelete": "¿Estas seguro de querer borrar la nota?",
+        "confirmArchive": "¿Estas seguro de querer archivar la nota?",
+    "confirmUnArchive": "¿Estas seguro de querer desarchivar la nota?",
+    "form": {
+      "upperTitle": "Crear Nueva Nota",
+      "title": "Titulo",
+      "titlePlaceholder": "Escribe el titulo",
+      "titleRequired": "El titulo es requerido",
+      "titleMinLength": "El titulo debe tener al menos 3 caracteres",
+      "content": "Contenido",
+      "contentPlaceholder": "Escribe tu nota..",
+      "contentRequired": "El contenido es requerido",
+      "contentMinLength": "El contenido debe tener al menos 5 caracteres",
+      "contentDetailPlaceholder": "Escribe algo..",
+      "tag": "Etiquetas",
+      "tagPlaceholder": "Escribe o selecciona etiquetas",
+      "color": "Color",
+      "save": "Crear Nota",
+      "archive": "Archivar",
+      "unArchive": "Desarchivar",
+      "delete": "Borrar",
+      "cancel": "Cancelar"
+    }
+  }
+}

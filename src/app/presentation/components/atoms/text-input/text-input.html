@@ -1,13 +1,13 @@
 <div class="space-y-2 w-full">
   <label [for]="id" class="text-sm font-medium leading-none dark:text-white">
-    {{ label }}
+    {{ label | translate }}
   </label>
 
   <input
     [id]="id"
     [type]="type"
     [formControl]="control"
-    [placeholder]="placeholder"
+    [placeholder]="placeholder | translate"
     class="flex h-10 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2 text-sm 
            placeholder:text-gray-400 focus:border-transparent focus-visible:outline-none 
            focus-visible:ring-2 focus-visible:ring-purple-600 disabled:cursor-not-allowed 
@@ -19,6 +19,6 @@
   />
 
   <p *ngIf="error" class="text-sm font-medium text-red-600">
-    {{ error }}
+    {{ error | translate }}
   </p>
 </div>
