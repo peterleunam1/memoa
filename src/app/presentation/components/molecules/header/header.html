@@ -1,13 +1,23 @@
 <!-- header.html -->
 <header
-  class="w-full flex items-center justify-between px-5 h-[70px] border-b border-b-gray-200
-          dark:text-white dark:border-b-gray-700"
+  class="w-full flex items-center justify-between px-5 h-[70px] border-b border-b-gray-200 dark:text-white dark:border-b-gray-700"
 >
   <h1 class="text-2xl font-bold">{{ title }}</h1>
   <span class="flex items-center gap-4">
-    <app-search></app-search>
-    <button (click)="toggleTheme()" class="bg-gray-200 dark:bg-[#181818] px-3 py-1 rounded">
-      toggle theme
-    </button>
+    <app-dropdown
+      [options]="dropdownOptions"
+      [selected]="defaultOption"
+      placeholder="Selecciona una opción"
+      (optionSelected)="onOptionSelected($event)"
+    ></app-dropdown>
+
+    <div class="flex items-center gap-2">
+      <i class="fa-solid fa-sun mb-1 text-lg text-yellow-300"></i>
+      <app-toggle-switch
+        [checked]="isDarkMode"
+        (checkedChange)="onThemeChange($event)"
+      ></app-toggle-switch>
+      <i class="fa-solid fa-moon mb-1 text-lg text-gray-300"></i>
+    </div>
   </span>
 </header>

@@ -18,7 +18,7 @@ export class ThemeUseCase {
   loadTheme(): void {
     this.ThemeGateway.loadTheme();
   }
-  getCuurrentTheme(): 'dark' | 'light' {
+  getCurrentTheme(): 'dark' | 'light' {
     return this.ThemeGateway.getCurrentTheme();
   }
 }

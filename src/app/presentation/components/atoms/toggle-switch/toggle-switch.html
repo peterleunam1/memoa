@@ -1,0 +1,13 @@
+<button
+  type="button"
+  role="switch"
+  [attr.aria-checked]="checked"
+  (click)="toggle()"
+  class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#181818] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+>
+  <span
+    class="inline-block h-4 w-4 transform rounded-full bg-gray-600 dark:bg-gray-200 transition-transform duration-300"
+    [class.translate-x-6]="checked"
+    [class.translate-x-1]="!checked"
+  ></span>
+</button>
