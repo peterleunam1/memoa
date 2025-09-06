@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Note } from '../../atoms/note/note';
 import { NoteModel } from '../../../../domain/models/note';
-import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-of-notes',
   standalone: true,
-  imports: [CommonModule, Note, TranslatePipe, TranslateDirective],
+  imports: [CommonModule, Note, TranslatePipe],
   templateUrl: './list-of-notes.html'
 })
 export class ListOfNotes {

@@ -12,7 +12,7 @@ import { ButtonComponent } from '../../atoms/button/button';
 import { TextInput } from '../../atoms/text-input/text-input';
 import { TextArea } from '../../atoms/text-area/text-area';
 import { TagsInputComponent } from '../../atoms/tags-input/tags-input';
-import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-note-form',
@@ -24,8 +24,7 @@ import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
     TextInput,
     TextArea,
     TagsInputComponent,
-    TranslatePipe,
-    TranslateDirective
+    TranslatePipe
   ],
   templateUrl: './note-form.html',
   styleUrl: './note-form.css'

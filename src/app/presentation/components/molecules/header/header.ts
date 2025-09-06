@@ -10,12 +10,12 @@ import { Store } from '@ngrx/store';
 import { TypographyActions } from '../../../states/actions/typography.actions';
 import { map } from 'rxjs/operators';
 import { ToggleSwitch } from '../../atoms/toggle-switch/toggle-switch';
-import { TranslateDirective, TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { loadFromStorage, saveToStorage } from '../../../helpers/local-storage';
 
 @Component({
   selector: 'app-header',
-  imports: [Search, CommonModule, Dropdown, ToggleSwitch, TranslatePipe, TranslateDirective],
+  imports: [Search, CommonModule, Dropdown, ToggleSwitch, TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })

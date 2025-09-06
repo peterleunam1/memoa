@@ -5,7 +5,7 @@ import { NoteModel } from '../../../../domain/models/note';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 const menuItems: MenuItemProps[] = [
   {
@@ -22,7 +22,7 @@ const menuItems: MenuItemProps[] = [
 
 @Component({
   selector: 'app-menu',
-  imports: [ListOfMenuItems, CommonModule, TranslatePipe, TranslateDirective],
+  imports: [ListOfMenuItems, CommonModule, TranslatePipe],
   templateUrl: './menu.html',
   styleUrl: './menu.css'
 })

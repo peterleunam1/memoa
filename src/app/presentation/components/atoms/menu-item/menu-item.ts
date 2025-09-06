@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 export interface MenuItemProps {
@@ -12,7 +12,7 @@ export interface MenuItemProps {
 }
 @Component({
   selector: 'app-menu-item',
-  imports: [RouterModule, CommonModule, TranslatePipe, TranslateDirective],
+  imports: [RouterModule, CommonModule, TranslatePipe],
   templateUrl: './menu-item.html',
   styleUrl: './menu-item.css'
 })
