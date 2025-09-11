@@ -16,6 +16,8 @@ import { typographyReducer } from './presentation/states/reducers/typography.red
 import { provideHttpClient } from '@angular/common/http';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SendEmailGateway } from './domain/send-email/send-email.gateway';
+import { SendEmailService } from './infrastructure/email/email';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -23,6 +25,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     { provide: ThemeGateway, useClass: ThemeService },
+    { provide: SendEmailGateway, useClass: SendEmailService },
     provideStore({ notes: NotesReducer, typography: typographyReducer }),
     provideHttpClient(),
     provideTranslateService({

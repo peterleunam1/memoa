@@ -16,9 +16,9 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TextArea } from '../../atoms/text-area/text-area';
 import { debounceTime, distinctUntilChanged, Subscription } from 'rxjs';
 import { TranslatePipe } from '@ngx-translate/core';
-import { Email } from '../../../../infrastructure/email/email';
 import { EmailListForm } from '../email-list-form/email-list-form';
 import { Modal } from '../../atoms/modal/modal';
+import { SendEmailUseCase } from '../../../../application/send-email/send-email.use-case';
 
 @Component({
   selector: 'app-note-details',
@@ -30,7 +30,7 @@ import { Modal } from '../../atoms/modal/modal';
 export class NoteDetails implements OnInit, OnChanges, OnDestroy {
   @Input() note: NoteModel = {} as NoteModel;
   @Output() noteUpdated = new EventEmitter<NoteModel>();
-  private emailService = inject(Email);
+  private emailService = inject(SendEmailUseCase);
   contentControl = new FormControl('');
   private sub!: Subscription;
   isModalOpen = false;
@@ -63,12 +63,11 @@ export class NoteDetails implements OnInit, OnChanges, OnDestroy {
   }
   async onEmailsSubmit(data: { emails: string[] }) {
     const emailsParsed = this.getEmailsAsString(data);
-    console.log(emailsParsed);
     this.isLoading = true;
 
     try {
       await this.emailService.sendEmail({
-        to_name: 'pedroagamesrocha@gmail.com',
+        to_name: emailsParsed,
         from_name: this.note.title,
         message: this.note.content,
         tags: this.note.tags.join(', '),

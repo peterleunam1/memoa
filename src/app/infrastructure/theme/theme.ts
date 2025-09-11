@@ -27,7 +27,7 @@ export class ThemeService extends ThemeGateway {
   }
 
   loadTheme(): void {
-    if (!isPlatformBrowser(this.platformId)) return; // 👈 evita ejecutar en SSR
+    if (!isPlatformBrowser(this.platformId)) return; 
 
     const savedTheme = localStorage.getItem(this.storageKey) as 'dark' | 'light' | null;
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -38,7 +38,6 @@ getCurrentTheme(): 'dark' | 'light' {
     if (isPlatformBrowser(this.platformId)) {
       return localStorage.getItem(this.storageKey) as 'dark' | 'light';
     }
-    // Valor por defecto cuando NO hay document (SSR / tests)
     return 'light';
   }
 }
