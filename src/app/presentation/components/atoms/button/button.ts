@@ -11,6 +11,7 @@ export class ButtonComponent {
   @Input() type: 'primary' | 'secondary' = 'primary';
   @Input() disabled = false;
   @Input() typeButton = 'button';
+  @Input() withBorder = true;
   get classes(): string {
     const base =
       'font-medium rounded-lg text-sm py-2.5 focus:outline-none cursor-pointer w-full';

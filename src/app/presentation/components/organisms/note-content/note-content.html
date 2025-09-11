@@ -1,7 +1,10 @@
-<section class="flex w-full relative">
+<section class="flex flex-col-reverse md:flex-row w-full relative">
   <div
-    class="list-notes-container flex flex-col w-1/4 p-5 gap-4"
-    [ngClass]="{ 'border-r border-r-gray-200 dark:border-r-gray-700': selectedNoteId }"
+    class="list-notes-container flex flex-col w-full md:w-1/4 p-5 gap-4"
+    [ngClass]="{
+      'border-r border-r-gray-200 dark:border-r-gray-700': selectedNoteId,
+      'hidden md:block gap-4': showDetailsMobile,
+    }"
   >
     <app-button (click)="isModalOpen = true" *ngIf="!isArchived">{{
       'main.addNote' | translate
@@ -12,27 +15,51 @@
       (noteClick)="handleClick($event)"
     ></app-list-of-notes>
   </div>
-  <div class="p-5 w-2/4">
+  <div
+    class="p-5 md:w-2/4 md:block"
+    [ngClass]="{ 'w-full': showDetailsMobile, 'hidden md:block': !showDetailsMobile }"
+  >
     <app-note-details [note]="currentNote" (noteUpdated)="handleUpdate($event)"></app-note-details>
   </div>
-  <div class="flex flex-col p-5 gap-4 w-1/4" *ngIf="selectedNoteId">
+  <div
+    class="flex md:flex-col px-5 py-1 md:py-5 gap-4 md:w-1/4 mt-4 md:mt-0"
+    [ngClass]="{ 'w-full ': showDetailsMobile, 'hidden md:block': !showDetailsMobile }"
+    *ngIf="selectedNoteId"
+  >
+    <span
+      class="md:hidden flex items-center gap-2 cursor-pointer mr-auto dark:text-white"
+      (click)="showDetailsMobile = !showDetailsMobile"
+    >
+      <i class="fa-solid fa-arrow-left"></i>
+      {{ 'main.back' | translate }}
+    </span>
     <app-button type="secondary" (click)="handleOpenArchiveModal()">
-      <i
-        class="fa-solid mr-1"
-        [ngClass]="currentNote.isArchived ? 'fa-box-open' : 'fa-box-archive'"
-      ></i>
-      {{ currentNote.isArchived ? ('main.unArchive' | translate) : ('main.archive' | translate) }}
+      <div class="flex gap-4 items-center justify-center">
+        <i
+          class="fa-solid mr-1 px-2 md:px-0"
+          [ngClass]="currentNote.isArchived ? 'fa-box-open' : 'fa-box-archive'"
+        ></i>
+        <p class="hidden md:block">
+          {{
+            currentNote.isArchived ? ('main.unArchive' | translate) : ('main.archive' | translate)
+          }}
+        </p>
+      </div>
     </app-button>
+    <div class="hidden md:block w-full h-4 bg-transparent"></div>
     <app-button type="secondary" (click)="handleOpenDeleteModal()">
-      <i class="fa-solid fa-trash mr-1"></i> {{ 'main.delete' | translate }}
+      <div class="flex gap-4 items-center justify-center">
+        <i class="fa-solid fa-trash mr-1 px-2 md:px-0"></i>
+        <p class="hidden md:block">{{ 'main.delete' | translate }}</p>
+      </div>
     </app-button>
   </div>
   <span
     *ngIf="notes.length === 0"
     class="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute font-medium flex flex-col items-center justify-center gap-4"
   >
-    <i class="fa-solid fa-circle-exclamation text-4xl text-gray-300"></i>
-    <p>{{ 'main.empty' | translate }}</p>
+    <i class="fa-solid fa-circle-exclamation text-4xl text-gray-300 "></i>
+    <p class="dark:text-white text-center">{{ 'main.empty' | translate }}</p>
   </span>
 </section>
 <app-modal [isOpen]="isModalOpen" title="Note Details" (closed)="isModalOpen = false">

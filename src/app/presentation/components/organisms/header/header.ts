@@ -12,21 +12,33 @@ import { map } from 'rxjs/operators';
 import { ToggleSwitch } from '../../atoms/toggle-switch/toggle-switch';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { loadFromStorage, saveToStorage } from '../../../helpers/local-storage';
+import { MobileMenu } from '../../atoms/mobile-menu/mobile-menu';
+import { NoteModel } from '../../../../domain/models/note';
+import { menuItems } from '../../../constants/menu';
+import { getTagsFromNotes } from '../../../helpers/get-tags-for-menu';
+import { ListOfMenuItems } from '../../molecules/list-of-menu-items/list-of-menu-items';
 
 @Component({
   selector: 'app-header',
-  imports: [Search, CommonModule, Dropdown, ToggleSwitch, TranslatePipe],
+  imports: [Search, CommonModule, Dropdown, ToggleSwitch, TranslatePipe, MobileMenu, ListOfMenuItems],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
 export class Header implements OnInit {
   @Input() title = '';
+  private store = inject(Store<{ notes: NoteModel[] }>);
+  isMenuOpen = false;
+  isConfigOpen = false;
+  notes$ = this.store.select('notes');
+  menuItems = menuItems;
+
+  tags$ = this.notes$.pipe(map((notes) => getTagsFromNotes(notes)));
+  
   public typographies = typographies;
 
   value: TypographyName['name'] = 'Epilogue';
 
   private themeUseCase = inject(ThemeUseCase);
-  private store = inject(Store<{ typography: TypographyName }>);
 
   dropdownOptions: DropdownOption[] = typographies.map((typography) => ({
     label: typography.name,
@@ -85,4 +97,16 @@ export class Header implements OnInit {
     this.selectedOption.set(option);
     saveToStorage('lang', option.value.toString());
   }
+
+  onUpdateDrawer(type: 'config' | 'menu'): void {
+  if (type === 'config') {
+    this.isConfigOpen = !this.isConfigOpen;
+    if (this.isConfigOpen) this.isMenuOpen = false;
+  }
+  if (type === 'menu') {
+    this.isMenuOpen = !this.isMenuOpen;
+    if (this.isMenuOpen) this.isConfigOpen = false;
+  }
+}
+
 }

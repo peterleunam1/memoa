@@ -1,0 +1,40 @@
+<form class="flex flex-col gap-5" [formGroup]="form" (ngSubmit)="submit()">
+  <strong class="text-lg dark:text-white">{{ 'share.title' | translate }}</strong>
+  <div formArrayName="emails" class="space-y-4 w-full">
+    <div *ngFor="let control of emailControls; let i = index" class="flex gap-2 items-start w-full">
+      <div class="w-full flex items-end gap-3">
+        <div class="w-full">
+          <app-text-input
+            [id]="'email-' + i"
+            label="share.email"
+            placeholder="share.emailPlaceholder"
+            type="email"
+            [control]="control"
+            [error]="control.invalid && control.touched ? getErrorMessage(control) : null"
+          ></app-text-input>
+        </div>
+
+        <button
+          type="button"
+          class="text-red-500 hover:text-red-600 hover:scale-110 transition duration-300 ease-in-out cursor-pointer"
+          *ngIf="emailControls.length > 1"
+          (click)="removeEmail(i)"
+        >
+          <i class="fa-solid fa-xmark text-xl mb-3"></i>
+        </button>
+      </div>
+    </div>
+    <div class="w-1/2 md:w-1/3">
+      <app-button type="secondary" (click)="addEmail()">
+        {{ 'share.addAnother' | translate }}
+      </app-button>
+    </div>
+  </div>
+  <app-button typeButton="submit" (click)="submit()" [disabled]="isLoading">
+    {{
+      isLoading
+        ? ('main.loading' | translate)
+        : ('share.send' | translate)
+    }}
+  </app-button>
+</form>

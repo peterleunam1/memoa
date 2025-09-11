@@ -16,7 +16,7 @@
     "lastEdited": "Ultima edición",
     "empty": "Aun no hay notas registradas en la base de datos, puedes crear una nueva.",
     "confirmDelete": "¿Estas seguro de querer borrar la nota?",
-        "confirmArchive": "¿Estas seguro de querer archivar la nota?",
+    "confirmArchive": "¿Estas seguro de querer archivar la nota?",
     "confirmUnArchive": "¿Estas seguro de querer desarchivar la nota?",
     "form": {
       "upperTitle": "Crear Nueva Nota",
@@ -37,6 +37,24 @@
       "unArchive": "Desarchivar",
       "delete": "Borrar",
       "cancel": "Cancelar"
-    }
+    },
+    "config": "Configuraciones",
+    "loading": "Cargando ...",
+    "back": "Atrás",
+    "language": "Idioma",
+    "typography": "Tipografia",
+    "darkMode": "Modo Oscuro"
+
+  },
+  "share": {
+    "title": "Compartir Detalles de Nota",
+    "email": "Correo Electronico",
+    "emailPlaceholder": "Escribe el correo electronico",
+    "emailRequired": "El correo electronico requerido",
+    "emailInvalid": "El correo electronico es invalido",
+    "send": "Enviar",
+    "addAnother": "Agregar otro correo electronico",
+    "success": "Email sent successfully, check your inbox",
+    "error": "Error al enviar el correo"
   }
 }

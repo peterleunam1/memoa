@@ -28,6 +28,8 @@ export class NoteContent implements OnChanges {
 
   private store = inject(Store<{ notes: NoteModel[] }>);
 
+  showDetailsMobile = false;
+
   isModalOpen = false;
   isDeleteModalOpen = false;
   isArchiveModalOpen = false;
@@ -37,6 +39,7 @@ export class NoteContent implements OnChanges {
   handleClick(noteId: string) {
     this.selectedNoteId = noteId;
     this.currentNote = this.notes.find((n) => n.id === noteId) || ({} as NoteModel);
+    this.showDetailsMobile = true;
   }
 
   handleOpenDeleteModal() {

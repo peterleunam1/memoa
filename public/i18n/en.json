@@ -36,6 +36,24 @@
       "unArchive": "Unarchive",
       "delete": "Delete",
       "cancel": "Cancel"
-    }
+    },
+    "config": "Settings",
+    "loading": "Loading ...",
+    "back": "Go Back",
+    "language": "Language",
+    "typography": "Typography",
+    "darkMode": "Dark Mode"
+  },
+  "share": {
+    "title": "Share Note Details",
+    "email": "Email",
+    "emailPlaceholder": "Type the email",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Email is invalid",
+    "send": "Send",
+    "cancel": "Cancel",
+    "addAnother": "Add Another Email",
+    "success": "Email sent successfully",
+    "error": "Error sending email"
   }
 }

@@ -1,5 +1,5 @@
 <div
-  class="flex flex-col gap-4 p-5 border-r border-r-gray-200 rounded-2xl w-full"
+  class="flex flex-col gap-4 p-5 border-r border-r-gray-200 rounded-2xl w-full relative"
   *ngIf="note.id"
   [ngStyle]="{ 'background-color': note.color }"
 >
@@ -24,7 +24,6 @@
       {{ note.lastEdit | date: 'dd MMM yyyy' }}
     </span>
   </div>
-
   <app-text-area
     id="note-content"
     label="Content"
@@ -33,4 +32,12 @@
     [border]="false"
     [withLabel]="false"
   ></app-text-area>
+  <div class="w-full flex justify-end items-center">
+    <button class="cursor-pointer" (click)="handleOpenModal()">
+    <i class="fa-solid fa-share-nodes text-lg hover:text-gray-500 hover:scale-115"></i>
+  </button>
+  </div>
+<app-modal [isOpen]="isModalOpen" (closed)="handleCloseModal()">
+  <app-email-list-form (emailsSubmit)="onEmailsSubmit($event)" [isLoading]="isLoading"></app-email-list-form>
+</app-modal>
 </div>
