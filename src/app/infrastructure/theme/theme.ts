@@ -1,6 +1,6 @@
 import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { ThemeGateway } from '../../domain/theme/theme.gateway';
+import { ThemeGateway } from '@domain';
 
 @Injectable({
   providedIn: 'root'

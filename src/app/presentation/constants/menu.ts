@@ -1,4 +1,4 @@
-import { MenuItemProps } from '../components/atoms/menu-item/menu-item';
+import { MenuItemProps } from '@components/atoms';
 
 export const menuItems: MenuItemProps[] = [
   {

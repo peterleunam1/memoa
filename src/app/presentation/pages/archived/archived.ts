@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { AppLayout } from '../../components/templates/app-layout/app-layout';
-import { NoteModel } from '../../../domain/models/note';
 import { map, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { NoteContent } from '../../components/organisms/note-content/note-content';
 import { CommonModule } from '@angular/common';
+import { NoteContent } from '@components/organisms';
+import { AppLayout } from '@components/templates';
+import { NoteModel } from '@domain';
 
 @Component({
   selector: 'app-archived',

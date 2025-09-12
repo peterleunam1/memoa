@@ -1,7 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
 import { TypographyActions } from '../actions/typography.actions';
-import { TypographyName } from '../../../domain/models/typography';
-import { loadFromStorage, saveToStorage } from '../../helpers/local-storage';
+import { TypographyName } from '@domain';
+import { loadFromStorage, saveToStorage } from '@helpers';
+
 
 const STORAGE_KEY = 'memora-typography';
 

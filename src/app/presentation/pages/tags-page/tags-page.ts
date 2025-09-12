@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { AppLayout } from '../../components/templates/app-layout/app-layout';
 import { ActivatedRoute } from '@angular/router';
-import { getCapitalize } from '../../helpers/get-capitalize';
 import { Store } from '@ngrx/store';
-import { NoteModel } from '../../../domain/models/note';
 import { map, Observable, switchMap } from 'rxjs';
-import { NoteContent } from '../../components/organisms/note-content/note-content';
 import { CommonModule } from '@angular/common';
+import { AppLayout } from '@components/templates';
+import { NoteContent } from '@components/organisms';
+import { NoteModel } from '@domain';
+import { getCapitalize } from '@helpers';
 
 @Component({
   selector: 'app-tags-page',

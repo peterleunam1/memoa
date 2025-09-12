@@ -1,5 +1,5 @@
+import { NoteModel } from '@domain';
 import { createAction, props } from '@ngrx/store';
-import { NoteModel } from '../../../domain/models/note';
 
 export const addNote = createAction('[Notes Component] Add Note', props<{ note: NoteModel }>());
 export const deleteNote = createAction('[Notes Component] Delete Note', props<{ noteId: string }>());

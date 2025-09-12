@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { ThemeGateway } from '../../domain/theme/theme.gateway';
+import { ThemeGateway } from '@domain';
 
 @Injectable({
   providedIn: 'root'

@@ -8,7 +8,7 @@ import {
   unarchiveNote,
   updateNote
 } from '../actions/notes.actions';
-import { loadFromStorage, saveToStorage } from '../../helpers/local-storage';
+import { loadFromStorage, saveToStorage } from '@helpers';
 
 const STORAGE_KEY = 'memora-notes';
 

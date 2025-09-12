@@ -1,20 +1,11 @@
 import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { NoteModel } from '../../../../domain/models/note';
-import { ButtonComponent } from '../../atoms/button/button';
-import { ListOfNotes } from '../../molecules/list-of-notes/list-of-notes';
-import { NoteDetails } from '../../molecules/note-details/note-details';
 import { Store } from '@ngrx/store';
 import { CommonModule } from '@angular/common';
-import {
-  addNote,
-  archiveNote,
-  deleteNote,
-  unarchiveNote,
-  updateNote
-} from '../../../states/actions/notes.actions';
-import { Modal } from '../../atoms/modal/modal';
-import { NoteForm } from '../../molecules/note-form/note-form';
 import { TranslatePipe } from '@ngx-translate/core';
+import { ButtonComponent, Modal } from '@components/atoms';
+import { ListOfNotes, NoteDetails, NoteForm } from '@components/molecules';
+import { NoteModel } from '@domain';
+import { addNote, archiveNote, deleteNote, unarchiveNote, updateNote } from '@states';
 
 @Component({
   selector: 'app-note-content',

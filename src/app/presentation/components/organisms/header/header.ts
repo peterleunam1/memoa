@@ -1,20 +1,17 @@
 import { Component, inject, Input, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ThemeUseCase } from '../../../../application/theme/theme.use-case';
-import { Dropdown, DropdownOption } from '../../atoms/dropdown/dropdown';
-import { typographies } from '../../../constants/typography';
-import { TypographyName } from '../../../../domain/models/typography';
 import { Store } from '@ngrx/store';
-import { TypographyActions } from '../../../states/actions/typography.actions';
 import { map } from 'rxjs/operators';
 import { ToggleSwitch } from '../../atoms/toggle-switch/toggle-switch';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
-import { loadFromStorage, saveToStorage } from '../../../helpers/local-storage';
-import { MobileMenu } from '../../atoms/mobile-menu/mobile-menu';
-import { NoteModel } from '../../../../domain/models/note';
-import { menuItems } from '../../../constants/menu';
-import { getTagsFromNotes } from '../../../helpers/get-tags-for-menu';
-import { ListOfMenuItems } from '../../molecules/list-of-menu-items/list-of-menu-items';
+import { Dropdown, DropdownOption, MobileMenu } from '@components/atoms';
+import { ListOfMenuItems } from '@components/molecules';
+import { NoteModel, TypographyName } from '@domain';
+import { menuItems, typographies } from '@constants';
+import { getTagsFromNotes, loadFromStorage, saveToStorage } from '@helpers';
+import { ThemeUseCase } from '@application';
+import { TypographyActions } from '@states';
+
 
 @Component({
   selector: 'app-header',

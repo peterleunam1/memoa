@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Note } from '../../atoms/note/note';
-import { NoteModel } from '../../../../domain/models/note';
+import { Note } from '@components/atoms';
+import { NoteModel } from '@domain';
+
 
 @Component({
   selector: 'app-list-of-notes',

@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { ListOfMenuItems } from '../../molecules/list-of-menu-items/list-of-menu-items';
-import { NoteModel } from '../../../../domain/models/note';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
-import { menuItems } from '../../../constants/menu';
-import { getTagsFromNotes } from '../../../helpers/get-tags-for-menu';
+import { ListOfMenuItems } from '@components/molecules';
+import { NoteModel } from '@domain';
+import { menuItems } from '@constants';
+import { getTagsFromNotes } from '@helpers';
 
 @Component({
   selector: 'app-menu',

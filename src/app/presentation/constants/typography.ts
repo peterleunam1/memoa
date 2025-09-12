@@ -1,4 +1,4 @@
-import { Typography } from '../../domain/models/typography';
+import { Typography } from '@domain';
 
 export const typographies: Typography[] = [
   {

@@ -1,6 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { SendEmailGateway } from '../../domain/send-email/send-email.gateway';
-import { SendEmailModel } from '../../domain/models/send-email';
+import { SendEmailGateway, SendEmailModel } from '@domain';
 
 @Injectable({
   providedIn: 'root'

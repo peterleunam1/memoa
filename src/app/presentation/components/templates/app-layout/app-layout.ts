@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Menu } from '../../organisms/menu/menu';
-import { Header } from '../../organisms/header/header';
+import { Header, Menu } from '@components/organisms';
 
 @Component({
   selector: 'app-app-layout',

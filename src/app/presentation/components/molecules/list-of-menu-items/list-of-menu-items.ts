@@ -1,7 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
-import { MenuItem, MenuItemProps } from '../../atoms/menu-item/menu-item';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { MenuItem, MenuItemProps } from '@components/atoms';
 
 @Component({
   selector: 'app-list-of-menu-items',

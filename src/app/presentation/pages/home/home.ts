@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { NoteContent } from '../../components/organisms/note-content/note-content';
 import { CommonModule } from '@angular/common';
-import { AppLayout } from '../../components/templates/app-layout/app-layout';
-import { NoteModel } from '../../../domain/models/note';
 import { map, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
+import { AppLayout } from '@components/templates';
+import { NoteContent } from '@components/organisms';
+import { NoteModel } from '@domain';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +22,4 @@ export class Home {
       .sort((a, b) => new Date(b.lastEdit).getTime() - new Date(a.lastEdit).getTime())
   )
 );
-
-
 }

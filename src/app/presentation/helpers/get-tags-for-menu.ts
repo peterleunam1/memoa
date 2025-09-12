@@ -1,4 +1,4 @@
-import { NoteModel } from '../../domain/models/note';
+import { NoteModel } from '@domain';
 
 export function getTagsFromNotes(notes: NoteModel[]) {
   const tagSet = new Set<string>();

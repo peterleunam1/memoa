@@ -8,9 +8,8 @@ import {
   ReactiveFormsModule,
   Validators
 } from '@angular/forms';
-import { TextInput } from '../../atoms/text-input/text-input';
-import { ButtonComponent } from '../../atoms/button/button';
 import { TranslatePipe } from '@ngx-translate/core';
+import { ButtonComponent, TextInput } from '@components/atoms';
 
 @Component({
   selector: 'app-email-list-form',

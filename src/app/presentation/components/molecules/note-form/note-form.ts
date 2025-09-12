@@ -7,12 +7,10 @@ import {
   Validators
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { NoteModel } from '../../../../domain/models/note';
-import { ButtonComponent } from '../../atoms/button/button';
-import { TextInput } from '../../atoms/text-input/text-input';
-import { TextArea } from '../../atoms/text-area/text-area';
-import { TagsInputComponent } from '../../atoms/tags-input/tags-input';
 import { TranslatePipe } from '@ngx-translate/core';
+import { ButtonComponent, TagsInputComponent, TextArea, TextInput } from '@components/atoms';
+import { NoteModel } from '@domain';
+import { availableColors } from '@constants';
 
 @Component({
   selector: 'app-note-form',
@@ -38,15 +36,7 @@ export class NoteForm {
     tags: [[]],
     color: ['#ffffff', Validators.required] // 🎨 blanco por defecto
   });
-  availableColors: string[] = [
-    '#ffffff', // Blanco
-    '#a7f3d0', // Verde pastel
-    '#bfdbfe', // Azul pastel
-    '#fbcfe8', // Rosa pastel
-    '#fef9c3', // Amarillo pastel
-    '#ddd6fe' // Lila pastel
-  ];
-
+  availableColors: string[] = availableColors;
   @Output() addNote = new EventEmitter<NoteModel>();
 
   // 🔹 Diccionario centralizado de errores

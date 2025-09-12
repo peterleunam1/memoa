@@ -10,15 +10,15 @@ import {
   inject,
   ViewChild
 } from '@angular/core';
-import { NoteModel } from '../../../../domain/models/note';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { TextArea } from '../../atoms/text-area/text-area';
 import { debounceTime, distinctUntilChanged, Subscription } from 'rxjs';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Modal, TextArea } from '@components/atoms';
 import { EmailListForm } from '../email-list-form/email-list-form';
-import { Modal } from '../../atoms/modal/modal';
-import { SendEmailUseCase } from '../../../../application/send-email/send-email.use-case';
+import { NoteModel } from '@domain';
+import { SendEmailUseCase } from '@application';
+
 
 @Component({
   selector: 'app-note-details',

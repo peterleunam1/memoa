@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
+import { SendEmailGateway, SendEmailModel } from '@domain';
+import { environment } from '@environments';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
-import { SendEmailModel } from '../../domain/models/send-email';
-import { SendEmailGateway } from '../../domain/send-email/send-email.gateway';
-import { environment } from '../../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })

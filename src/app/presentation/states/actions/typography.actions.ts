@@ -1,5 +1,5 @@
+import { TypographyName } from '@domain';
 import { createActionGroup, props } from '@ngrx/store';
-import { TypographyName } from '../../../domain/models/typography';
 
 export const TypographyActions = createActionGroup({
   source: 'Typography',
