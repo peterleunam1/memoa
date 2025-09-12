@@ -1,11 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { ListOfMenuItems } from '../../molecules/list-of-menu-items/list-of-menu-items';
-import { TranslatePipe } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-mobile-menu',
-  imports: [ListOfMenuItems, TranslatePipe, CommonModule],
+  imports: [CommonModule],
   templateUrl: './mobile-menu.html',
   styleUrl: './mobile-menu.css'
 })

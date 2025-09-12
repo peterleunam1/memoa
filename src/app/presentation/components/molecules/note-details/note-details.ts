@@ -62,11 +62,11 @@ export class NoteDetails implements OnInit, OnChanges, OnDestroy {
     this.emailListForm.handleClose();
   }
   async onEmailsSubmit(data: { emails: string[] }) {
-    const emailsParsed = this.getEmailsAsString(data);
     this.isLoading = true;
+    const emailsParsed = this.getEmailsAsString(data);
 
     try {
-      await this.emailService.sendEmail({
+      this.emailService.sendEmail({
         to_name: emailsParsed,
         from_name: this.note.title,
         message: this.note.content,
@@ -76,8 +76,6 @@ export class NoteDetails implements OnInit, OnChanges, OnDestroy {
       this.handleCloseModal();
     } catch (error) {
       console.error('❌ Error al enviar correo:', error);
-    } finally {
-      this.isLoading = false;
     }
   }
   ngOnChanges(changes: SimpleChanges) {

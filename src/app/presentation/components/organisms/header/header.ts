@@ -1,6 +1,4 @@
-// header.ts
 import { Component, inject, Input, OnInit, signal } from '@angular/core';
-import { Search } from '../../atoms/search/search';
 import { CommonModule } from '@angular/common';
 import { ThemeUseCase } from '../../../../application/theme/theme.use-case';
 import { Dropdown, DropdownOption } from '../../atoms/dropdown/dropdown';
@@ -20,7 +18,7 @@ import { ListOfMenuItems } from '../../molecules/list-of-menu-items/list-of-menu
 
 @Component({
   selector: 'app-header',
-  imports: [Search, CommonModule, Dropdown, ToggleSwitch, TranslatePipe, MobileMenu, ListOfMenuItems],
+  imports: [CommonModule, Dropdown, ToggleSwitch, TranslatePipe, MobileMenu, ListOfMenuItems],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
