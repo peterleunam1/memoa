@@ -33,7 +33,7 @@ const defaultState: NoteModel[] = [
   }
 ];
 
-export const initialState: NoteModel[] = loadFromStorage(STORAGE_KEY, defaultState);
+export const initialState: NoteModel[] = loadFromStorage(STORAGE_KEY, defaultState) || defaultState;
 
 export const NotesReducer = createReducer(
   initialState,

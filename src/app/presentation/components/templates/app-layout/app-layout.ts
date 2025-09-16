@@ -13,7 +13,6 @@ export class AppLayout {
     isDrawerOpen = true;
 
   onToggleDrawer(open: boolean) {
-    console.log('[Layout] onToggleDrawer', open);
     this.isDrawerOpen = open;
   }
 

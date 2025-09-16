@@ -1,4 +1,3 @@
-<!--  -->
   <app-app-layout title="menu.all">
-    <app-note-content [notes]="(filteredNotes$ | async) ?? []"></app-note-content>
+    <app-note-content [notes]="(filteredNotes$ | async) || []"></app-note-content>
   </app-app-layout>

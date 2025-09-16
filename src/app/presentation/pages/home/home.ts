@@ -16,10 +16,15 @@ export class Home {
   private store = inject(Store<{ notes: NoteModel[] }>);
 
  filteredNotes$: Observable<NoteModel[]> = this.store.select('notes').pipe(
-  map((notes: NoteModel[]) =>
+  map((notes: NoteModel[] = []) => 
     notes
       .filter(n => !n.isArchived)
-      .sort((a, b) => new Date(b.lastEdit).getTime() - new Date(a.lastEdit).getTime())
+      .sort((a, b) => {
+        const dateA = a?.lastEdit ? new Date(a.lastEdit).getTime() : 0;
+        const dateB = b?.lastEdit ? new Date(b.lastEdit).getTime() : 0;
+        return dateB - dateA;
+      })
   )
 );
+
 }

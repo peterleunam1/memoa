@@ -21,7 +21,7 @@
       "@components/*": ["src/app/presentation/components/*"],
       "@constants": ["src/app/presentation/constants/index.ts"],
       "@helpers": ["src/app/presentation/helpers/index.ts"],
-      "@pages/*": ["src/app/presentation/pages/*"],
+      "@pages": ["src/app/presentation/pages/index.ts"],
       "@states": ["src/app/presentation/states/index.ts"],
       "@application": ["src/app/application/index.ts"],
       "@infrastructure": ["src/app/infrastructure/index.ts"],

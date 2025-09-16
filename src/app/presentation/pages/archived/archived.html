@@ -1,3 +1,3 @@
 <app-app-layout title="menu.archived">
-    <app-note-content [notes]="(filteredNotes$ | async) ?? []" [isArchived]="true"></app-note-content>
+    <app-note-content [notes]="(filteredNotes$ | async) || []" [isArchived]="true"></app-note-content>
 </app-app-layout>
