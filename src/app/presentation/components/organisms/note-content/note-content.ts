@@ -9,7 +9,15 @@ import { addNote, archiveNote, deleteNote, unarchiveNote, updateNote } from '@st
 
 @Component({
   selector: 'app-note-content',
-  imports: [ButtonComponent, ListOfNotes, NoteDetails, CommonModule, Modal, NoteForm, TranslatePipe],
+  imports: [
+    ButtonComponent,
+    ListOfNotes,
+    NoteDetails,
+    CommonModule,
+    Modal,
+    NoteForm,
+    TranslatePipe
+  ],
   templateUrl: './note-content.html',
   styleUrl: './note-content.css'
 })
@@ -64,20 +72,20 @@ export class NoteContent implements OnChanges {
     this.currentNote = note;
   }
 
-
-handleUpdate(updatedNote: NoteModel) {
-  console.log(updatedNote);
-  this.store.dispatch(updateNote({ note: updatedNote }));
-}
+  handleUpdate(updatedNote: NoteModel) {
+    console.log(updatedNote);
+    this.store.dispatch(updateNote({ note: updatedNote }));
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['notes']) {
       if (this.notes.length > 0) {
-        if (!this.notes.some(n => n.id === this.selectedNoteId)) {
+        if (!this.notes.some((n) => n.id === this.selectedNoteId)) {
           this.selectedNoteId = this.notes[0].id;
           this.currentNote = this.notes[0];
         } else {
-          this.currentNote = this.notes.find(n => n.id === this.selectedNoteId) || ({} as NoteModel);
+          this.currentNote =
+            this.notes.find((n) => n.id === this.selectedNoteId) || ({} as NoteModel);
         }
       } else {
         this.selectedNoteId = null;

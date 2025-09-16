@@ -16,24 +16,20 @@ import { TypographyActions } from '@states';
 @Component({
   selector: 'app-header',
   imports: [CommonModule, Dropdown, ToggleSwitch, TranslatePipe, MobileMenu, ListOfMenuItems],
-  templateUrl: './header.html',
-  styleUrl: './header.css'
+  templateUrl: './header.html'
 })
 export class Header implements OnInit {
   @Input() title = '';
+  public typographies = typographies;
   private store = inject(Store<{ notes: NoteModel[] }>);
+  private themeUseCase = inject(ThemeUseCase);
   isMenuOpen = false;
   isConfigOpen = false;
   notes$ = this.store.select('notes');
   menuItems = menuItems;
-
   tags$ = this.notes$.pipe(map((notes) => getTagsFromNotes(notes)));
   
-  public typographies = typographies;
-
   value: TypographyName['name'] = 'Epilogue';
-
-  private themeUseCase = inject(ThemeUseCase);
 
   dropdownOptions: DropdownOption[] = typographies.map((typography) => ({
     label: typography.name,

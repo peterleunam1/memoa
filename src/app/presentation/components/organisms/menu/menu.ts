@@ -11,14 +11,11 @@ import { getTagsFromNotes } from '@helpers';
 @Component({
   selector: 'app-menu',
   imports: [ListOfMenuItems, CommonModule, TranslatePipe],
-  templateUrl: './menu.html',
-  styleUrl: './menu.css'
+  templateUrl: './menu.html'
 })
 export class Menu {
   private store = inject(Store<{ notes: NoteModel[] }>);
   notes$ = this.store.select('notes');
-
   menuItems = menuItems;
-
   tags$ = this.notes$.pipe(map((notes) => getTagsFromNotes(notes)));
 }

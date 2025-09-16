@@ -10,11 +10,20 @@
       <app-list-of-menu-items [items]="(tags$ | async) ?? []"></app-list-of-menu-items>
     </app-mobile-menu>
     <h1 class="text-xl md:text-2xl font-bold w-full mr-auto">{{ title | translate }}</h1>
-    <app-mobile-menu [isDrawerOpen]="isConfigOpen" icon="fa-solid fa-gear" orientation="right" (click)="onUpdateDrawer('config')">
+    <app-mobile-menu
+      [isDrawerOpen]="isConfigOpen"
+      icon="fa-solid fa-gear"
+      orientation="right"
+      (click)="onUpdateDrawer('config')"
+    >
       <span class="flex flex-col items-center gap-10 w-full">
-        <picture class="text-xl font-bold dark:text-white w-full text-left">{{ 'main.config' | translate }}</picture>
+        <picture class="text-xl font-bold dark:text-white w-full text-left">{{
+          'main.config' | translate
+        }}</picture>
         <div class="flex flex-col w-full gap-4">
-          <p class="text-sm font-medium leading-none dark:text-white">{{ 'main.language' | translate }}</p>
+          <p class="text-sm font-medium leading-none dark:text-white">
+            {{ 'main.language' | translate }}
+          </p>
           <app-dropdown
             [options]="options"
             [selected]="selectedOption()"
@@ -23,7 +32,9 @@
           ></app-dropdown>
         </div>
         <div class="flex flex-col w-full gap-4">
-          <p class="text-sm font-medium leading-none dark:text-white">{{ 'main.typography' | translate }}</p>
+          <p class="text-sm font-medium leading-none dark:text-white">
+            {{ 'main.typography' | translate }}
+          </p>
           <app-dropdown
             [options]="dropdownOptions"
             [selected]="defaultOption"
@@ -32,7 +43,9 @@
           ></app-dropdown>
         </div>
         <div class="flex flex-col w-full gap-4">
-          <p class="text-sm font-medium leading-none dark:text-white">{{ 'main.darkMode' | translate }}</p>
+          <p class="text-sm font-medium leading-none dark:text-white">
+            {{ 'main.darkMode' | translate }}
+          </p>
           <div class="flex items-center gap-2">
             <i class="fa-solid fa-sun mb-1 text-lg text-gray-400"></i>
             <app-toggle-switch
