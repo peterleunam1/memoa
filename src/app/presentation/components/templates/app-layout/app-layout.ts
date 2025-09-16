@@ -5,12 +5,11 @@ import { Header, Menu } from '@components/organisms';
 @Component({
   selector: 'app-app-layout',
   imports: [CommonModule, Header, Menu],
-  templateUrl: './app-layout.html',
-  styleUrl: './app-layout.css'
+  templateUrl: './app-layout.html'
 })
 export class AppLayout {
   @Input() title = '';
-    isDrawerOpen = true;
+  isDrawerOpen = true;
 
   onToggleDrawer(open: boolean) {
     this.isDrawerOpen = open;
@@ -19,5 +18,4 @@ export class AppLayout {
   closeDrawer() {
     this.isDrawerOpen = false;
   }
-
 }
