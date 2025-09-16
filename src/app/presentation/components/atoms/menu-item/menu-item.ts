@@ -3,7 +3,6 @@ import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
-
 export interface MenuItemProps {
   route?: string;
   label: string;
@@ -13,10 +12,8 @@ export interface MenuItemProps {
 @Component({
   selector: 'app-menu-item',
   imports: [RouterModule, CommonModule, TranslatePipe],
-  templateUrl: './menu-item.html',
-  styleUrl: './menu-item.css'
+  templateUrl: './menu-item.html'
 })
-
 export class MenuItem {
-  @Input() props: MenuItemProps = {} as MenuItemProps; 
+  @Input() props: MenuItemProps = {} as MenuItemProps;
 }

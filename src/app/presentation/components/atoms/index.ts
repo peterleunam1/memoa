@@ -4,7 +4,6 @@ export * from './menu-item/menu-item';
 export * from './mobile-menu/mobile-menu';
 export * from './modal/modal';
 export * from './note/note';
-export * from './overlay/overlay';
 export * from './tags-input/tags-input';
 export * from './text-area/text-area';
 export * from './text-input/text-input';

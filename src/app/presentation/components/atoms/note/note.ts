@@ -5,10 +5,8 @@ import { Component, Input } from '@angular/core';
   selector: 'app-note',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './note.html',
-  styleUrl: './note.css'
+  templateUrl: './note.html'
 })
-
 export class Note {
   @Input() active = false;
   @Input() title!: string;

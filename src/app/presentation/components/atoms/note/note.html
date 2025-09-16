@@ -1,14 +1,8 @@
-<article [ngClass]="articleClasses"
-  [ngStyle]="{ 'background-color': color }"
-
->
+<article [ngClass]="articleClasses" [ngStyle]="{ 'background-color': color }">
   <strong class="text-sm">{{ title }}</strong>
 
   <ul class="flex flex-row gap-1 flex-wrap">
-    <li
-      class="bg-gray-200 p-[2px] rounded"
-      *ngFor="let tag of tags"
-    >
+    <li class="bg-gray-200 p-[2px] rounded" *ngFor="let tag of tags">
       <small class="text-[10px]">{{ tag }}</small>
     </li>
   </ul>

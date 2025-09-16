@@ -7,8 +7,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-text-area',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule, TranslatePipe],
-  templateUrl: './text-area.html',
-  styleUrl: './text-area.css'
+  templateUrl: './text-area.html'
 })
 export class TextArea implements OnInit {
   @Input() id!: string;

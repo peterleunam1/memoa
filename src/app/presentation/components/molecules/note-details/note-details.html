@@ -5,10 +5,10 @@
 >
   <h2 class="text-xl font-bold">{{ note.title }}</h2>
 
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2 text-sm">
     <span class="flex" *ngIf="note.tags.length > 0">
       <div class="w-[150px] flex gap-2">
-        <i class="fa-solid fa-tags"></i> {{ 'menu.tags' | translate }}
+        <i class="fa-solid fa-tags"></i> <strong>{{ 'menu.tags' | translate }}:</strong>
       </div>
       <ul class="flex flex-row gap-1 flex-wrap">
         <li *ngFor="let tag of note.tags">
@@ -19,7 +19,7 @@
 
     <span class="flex" *ngIf="note.lastEdit">
       <div class="w-[150px] flex gap-2">
-        <i class="fa-regular fa-clock"></i> {{ 'main.lastEdited' | translate }}
+        <i class="fa-regular fa-clock"></i> <strong>{{ 'main.lastEdited' | translate }}:</strong>
       </div>
       {{ note.lastEdit | date: 'dd MMM yyyy' }}
     </span>
@@ -34,10 +34,13 @@
   ></app-text-area>
   <div class="w-full flex justify-end items-center">
     <button class="cursor-pointer" (click)="handleOpenModal()">
-    <i class="fa-solid fa-share-nodes text-lg hover:text-gray-500 hover:scale-115"></i>
-  </button>
+      <i class="fa-solid fa-share-nodes text-lg hover:text-gray-500 hover:scale-115"></i>
+    </button>
   </div>
-<app-modal [isOpen]="isModalOpen" (closed)="handleCloseModal()">
-  <app-email-list-form (emailsSubmit)="onEmailsSubmit($event)" [isLoading]="isLoading"></app-email-list-form>
-</app-modal>
+  <app-modal [isOpen]="isModalOpen" (closed)="handleCloseModal()">
+    <app-email-list-form
+      (emailsSubmit)="onEmailsSubmit($event)"
+      [isLoading]="isLoading"
+    ></app-email-list-form>
+  </app-modal>
 </div>

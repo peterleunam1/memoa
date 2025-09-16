@@ -15,19 +15,10 @@ const STORAGE_KEY = 'memora-notes';
 const defaultState: NoteModel[] = [
   {
     id: '1',
-    title: 'React Performance Optimization',
-    tags: ['work', 'frontend'],
-    lastEdit: new Date(2024, 9, 29),
-    content: 'Details about react performance...',
-    isArchived: false,
-    color: '#fef9c3'
-  },
-  {
-    id: '2',
-    title: 'Personal Growth Notes',
-    tags: ['personal'],
+    title: 'Title note demo',
+    tags: ['demo', 'test'],
     lastEdit: new Date(2024, 8, 12),
-    content: 'My personal notes...',
+    content: 'This is a demo note to test the app.',
     isArchived: false,
     color: '#bfdbfe'
   }

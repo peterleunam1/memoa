@@ -4,8 +4,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-mobile-menu',
   imports: [CommonModule],
-  templateUrl: './mobile-menu.html',
-  styleUrl: './mobile-menu.css'
+  templateUrl: './mobile-menu.html'
 })
 export class MobileMenu {
   @Input() orientation: 'left' | 'right' = 'left';

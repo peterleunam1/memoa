@@ -2,7 +2,6 @@
   display: block;
 }
 
-/* Animación tipo shadcn */
 @keyframes fadeIn {
   from {
     opacity: 0;

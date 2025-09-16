@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TagsInput } from './tags-input';
+import { TagsInputComponent as TagsInput } from './tags-input';
 
 describe('TagsInput', () => {
   let component: TagsInput;

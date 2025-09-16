@@ -1,18 +1,13 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { CommonModule } from '@angular/common';
 import { Component, Input, forwardRef } from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormsModule,
-  NG_VALUE_ACCESSOR
-} from '@angular/forms';
+import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-tags-input',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './tags-input.html',
-  styleUrl: './tags-input.css',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -23,7 +18,6 @@ import {
 })
 export class TagsInputComponent implements ControlValueAccessor {
   @Input() predefinedTags: string[] = [];
-
   private _value: string[] = [];
   get value(): string[] {
     return this._value;
@@ -41,7 +35,6 @@ export class TagsInputComponent implements ControlValueAccessor {
   private onChange: (value: string[]) => void = () => {};
   private onTouched: () => void = () => {};
 
-  // ControlValueAccessor
   writeValue(value: string[] | null): void {
     this._value = value ?? [];
   }
@@ -65,7 +58,7 @@ export class TagsInputComponent implements ControlValueAccessor {
   }
 
   removeTag(tag: string): void {
-    this.value = this._value.filter(t => t !== tag);
+    this.value = this._value.filter((t) => t !== tag);
   }
 
   onFocus(): void {
@@ -73,14 +66,13 @@ export class TagsInputComponent implements ControlValueAccessor {
   }
 
   onBlur(): void {
-    // pequeño delay para permitir clic en las opciones
     setTimeout(() => (this.showDropdown = false), 200);
   }
 
   filteredTags(): string[] {
     const term = this.inputValue.toLowerCase();
     return this.predefinedTags.filter(
-      tag => tag.toLowerCase().includes(term) && !this._value.includes(tag)
+      (tag) => tag.toLowerCase().includes(term) && !this._value.includes(tag)
     );
   }
 }

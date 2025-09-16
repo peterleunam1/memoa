@@ -14,5 +14,4 @@ export class Modal {
   handleClose() {
     this.closed.emit();
   }
-
 }

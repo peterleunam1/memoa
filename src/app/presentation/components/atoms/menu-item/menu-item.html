@@ -4,8 +4,9 @@
     'bg-gray-100 dark:bg-[#181818]': props.active,
     'hover:bg-gray-100 dark:hover:bg-[#181818]': !props.active,
   }"
-  class="flex items-center justify-between gap-2 px-4 py-2 rounded-lg transition-colors text-gray-900 cursor-pointer dark:text-white w-full "
->  <div class="flex items-center gap-2">
+  class="flex items-center justify-between gap-2 px-4 py-2 rounded-lg transition-colors text-gray-900 cursor-pointer dark:text-white w-full"
+>
+  <div class="flex items-center gap-2">
     <i
       [class]="props.icon"
       [ngClass]="{
@@ -15,7 +16,7 @@
     ></i>
     <span>{{ props.label | translate }}</span>
   </div>
-<div class="block" *ngIf="props.active">
+  <div class="block" *ngIf="props.active">
     <i class="fa-solid fa-angle-right"></i>
-</div>
+  </div>
 </a>

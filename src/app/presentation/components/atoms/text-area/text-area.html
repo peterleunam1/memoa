@@ -2,23 +2,18 @@
   <label [for]="id" class="text-sm font-medium leading-none dark:text-white" *ngIf="withLabel">
     {{ label | translate }}
   </label>
-
   <textarea
     [id]="id"
     [formControl]="control"
     [rows]="rows"
     [placeholder]="placeholder | translate"
-    class="flex min-h-[80px] w-full rounded-md bg-transparent px-3 py-2 text-sm 
-           placeholder:text-gray-400 focus:border-transparent focus-visible:outline-none 
-           focus-visible:ring-2 focus-visible:ring-purple-600 disabled:cursor-not-allowed 
-           disabled:opacity-50"
+    class="flex min-h-[80px] w-full rounded-md bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:border-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-600 disabled:cursor-not-allowed disabled:opacity-50"
     [ngClass]="{
       'focus-visible:ring-red-600 focus:border-transparent border-red-600': error,
       'border border-gray-300 dark:border-gray-700 dark:text-white': border,
-      'dark:text-gray-900': !border
+      'dark:text-gray-900': !border,
     }"
   ></textarea>
-
   <p *ngIf="error" class="text-sm font-medium text-red-600">
     {{ error | translate }}
   </p>

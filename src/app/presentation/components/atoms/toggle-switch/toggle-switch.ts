@@ -4,8 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'app-toggle-switch',
   imports: [CommonModule],
-  templateUrl: './toggle-switch.html',
-  styleUrl: './toggle-switch.css'
+  templateUrl: './toggle-switch.html'
 })
 export class ToggleSwitch {
   @Input() checked = false; // valor del toggle

@@ -19,10 +19,9 @@ export interface DropdownOption {
   templateUrl: './dropdown.html',
   styleUrl: './dropdown.css',
   changeDetection: ChangeDetectionStrategy.OnPush
-
 })
 export class Dropdown {
- @Input() options: DropdownOption[] = [];
+  @Input() options: DropdownOption[] = [];
   @Input() placeholder = 'Select...';
   @Input() selected?: DropdownOption;
 

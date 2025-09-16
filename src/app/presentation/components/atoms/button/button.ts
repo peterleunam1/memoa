@@ -13,8 +13,7 @@ export class ButtonComponent {
   @Input() typeButton = 'button';
   @Input() withBorder = true;
   get classes(): string {
-    const base =
-      'font-medium rounded-lg text-sm py-2.5 focus:outline-none cursor-pointer w-full';
+    const base = 'font-medium rounded-lg text-sm py-2.5 focus:outline-none cursor-pointer w-full';
 
     const variants: Record<typeof this.type, string> = {
       primary: 'text-white bg-purple-700 hover:bg-purple-900 focus:ring-4 focus:ring-purple-200 ',

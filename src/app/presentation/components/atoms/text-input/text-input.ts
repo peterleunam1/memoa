@@ -6,8 +6,7 @@ import {TranslatePipe } from '@ngx-translate/core';
 @Component({
   selector: 'app-text-input',
   imports: [CommonModule, ReactiveFormsModule, TranslatePipe],
-  templateUrl: './text-input.html',
-  styleUrl: './text-input.css'
+  templateUrl: './text-input.html'
 })
 export class TextInput {
  @Input() id!: string;

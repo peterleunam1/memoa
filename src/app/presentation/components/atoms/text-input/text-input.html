@@ -2,22 +2,16 @@
   <label [for]="id" class="text-sm font-medium leading-none dark:text-white">
     {{ label | translate }}
   </label>
-
   <input
     [id]="id"
     [type]="type"
     [formControl]="control"
     [placeholder]="placeholder | translate"
-    class="flex h-10 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2 text-sm 
-           placeholder:text-gray-400 focus:border-transparent focus-visible:outline-none 
-           focus-visible:ring-2 focus-visible:ring-purple-600 disabled:cursor-not-allowed 
-           disabled:opacity-50 dark:text-white dark:placeholder:text-gray-500"
+    class="flex h-10 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:border-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-600 disabled:cursor-not-allowed disabled:opacity-50 dark:text-white dark:placeholder:text-gray-500"
     [ngClass]="{
-      'focus-visible:ring-red-600 focus:border-transparent border-red-600':
-        error
+      'focus-visible:ring-red-600 focus:border-transparent border-red-600': error,
     }"
   />
-
   <p *ngIf="error" class="text-sm font-medium text-red-600">
     {{ error | translate }}
   </p>

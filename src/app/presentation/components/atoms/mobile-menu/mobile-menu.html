@@ -1,7 +1,6 @@
-<!-- OVERLAY MOBILE -->
- <button (click)="isDrawerOpen = true" class="text-xl md:hidden">
-    <i [class]="icon"></i>
-  </button>
+<button (click)="isDrawerOpen = true" class="text-xl md:hidden">
+  <i [class]="icon"></i>
+</button>
 
 <div
   *ngIf="isDrawerOpen"
@@ -9,15 +8,13 @@
   (click)="isDrawerOpen = false"
 ></div>
 
-<!-- DRAWER MOBILE -->
 <aside
   *ngIf="isDrawerOpen"
   class="fixed top-0 h-full w-[250px] bg-white dark:bg-black shadow-lg z-50 p-4 flex flex-col gap-2 transform transition-transform duration-300 animate-slide-in"
   [ngClass]="{ 'right-0': orientation === 'right', 'left-0': orientation === 'left' }"
 >
-  <!-- Cerrar -->
   <button (click)="isDrawerOpen = false" class="self-end text-2xl dark:text-white">
     <i class="fa-solid fa-xmark"></i>
   </button>
-<ng-content></ng-content>
+  <ng-content></ng-content>
 </aside>
