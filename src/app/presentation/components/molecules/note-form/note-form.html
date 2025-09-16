@@ -18,7 +18,7 @@
     [rows]="4"
   >
   </app-text-area>
-  
+
   <app-tags-input
     [formControl]="tagsControl"
     [predefinedTags]="['Personal', 'Importante', 'Ideas', 'Estudio']"
@@ -27,7 +27,9 @@
 
   <!-- Selector de color -->
   <div class="space-y-1">
-    <label for="color" class="block text-sm font-medium dark:text-white">{{'main.form.color' | translate}}</label>
+    <label for="color" class="block text-sm font-medium dark:text-white">{{
+      'main.form.color' | translate
+    }}</label>
     <div class="flex space-x-2">
       <div
         *ngFor="let color of availableColors"

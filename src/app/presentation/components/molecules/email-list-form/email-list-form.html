@@ -31,10 +31,6 @@
     </div>
   </div>
   <app-button typeButton="submit" (click)="submit()" [disabled]="isLoading">
-    {{
-      isLoading
-        ? ('main.loading' | translate)
-        : ('share.send' | translate)
-    }}
+    {{ isLoading ? ('main.loading' | translate) : ('share.send' | translate) }}
   </app-button>
 </form>

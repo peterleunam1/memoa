@@ -6,7 +6,6 @@ import { NoteModel } from '@domain';
 
 @Component({
   selector: 'app-list-of-notes',
-  standalone: true,
   imports: [CommonModule, Note],
   templateUrl: './list-of-notes.html'
 })

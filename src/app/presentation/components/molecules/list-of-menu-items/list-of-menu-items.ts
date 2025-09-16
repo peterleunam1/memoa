@@ -6,8 +6,7 @@ import { MenuItem, MenuItemProps } from '@components/atoms';
 @Component({
   selector: 'app-list-of-menu-items',
   imports: [MenuItem, CommonModule],
-  templateUrl: './list-of-menu-items.html',
-  styleUrl: './list-of-menu-items.css'
+  templateUrl: './list-of-menu-items.html'
 })
 export class ListOfMenuItems {
   @Input() items: MenuItemProps[] = [];

@@ -57,16 +57,12 @@ export class EmailListForm {
       return;
     }
 
-    this.emails.push(
-      this.fb.control<string | null>('', [Validators.required, Validators.email])
-    );
+    this.emails.push(this.fb.control<string | null>('', [Validators.required, Validators.email]));
   }
-handleClose() {
-  this.emails.clear(); // elimina todos los controles
-  this.emails.push(
-    this.fb.control<string | null>('', [Validators.required, Validators.email])
-  );
-}
+  handleClose() {
+    this.emails.clear(); // elimina todos los controles
+    this.emails.push(this.fb.control<string | null>('', [Validators.required, Validators.email]));
+  }
 
   removeEmail(index: number) {
     this.emails.removeAt(index);

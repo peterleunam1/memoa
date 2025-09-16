@@ -24,22 +24,21 @@ import { availableColors } from '@constants';
     TagsInputComponent,
     TranslatePipe
   ],
-  templateUrl: './note-form.html',
-  styleUrl: './note-form.css'
+  templateUrl: './note-form.html'
 })
 export class NoteForm {
+  @Output() addNote = new EventEmitter<NoteModel>();
   private fb = inject(FormBuilder);
 
   noteForm: FormGroup = this.fb.group({
     title: ['', [Validators.required, Validators.minLength(3)]],
     content: ['', [Validators.required, Validators.minLength(5)]],
     tags: [[]],
-    color: ['#ffffff', Validators.required] // 🎨 blanco por defecto
+    color: ['#ffffff', Validators.required]
   });
-  availableColors: string[] = availableColors;
-  @Output() addNote = new EventEmitter<NoteModel>();
 
-  // 🔹 Diccionario centralizado de errores
+  availableColors: string[] = availableColors;
+
   errorMessages: Record<string, Record<string, string>> = {
     title: {
       required: 'main.form.titleRequired',
@@ -50,7 +49,7 @@ export class NoteForm {
       minlength: 'main.form.contentMinLength'
     }
   };
-  // 🔹 Getter para evitar repetir noteForm.get(...)
+
   get titleControl() {
     return this.noteForm.get('title') as FormControl;
   }
@@ -62,7 +61,6 @@ export class NoteForm {
     return this.noteForm.get('tags') as FormControl<string[]>;
   }
 
-  // 🔹 Obtiene el primer mensaje de error visible
   getErrorMessage(controlName: 'title' | 'content'): string | null {
     const control = this.noteForm.get(controlName);
     if (control?.touched && control?.errors) {
@@ -84,7 +82,7 @@ export class NoteForm {
       this.addNote.emit(newNote);
       this.noteForm.reset();
     } else {
-      this.noteForm.markAllAsTouched(); // para mostrar errores si intentan enviar vacío
+      this.noteForm.markAllAsTouched();
     }
   }
   

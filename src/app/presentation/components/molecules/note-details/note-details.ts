@@ -24,17 +24,16 @@ import { SendEmailUseCase } from '@application';
   selector: 'app-note-details',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, TextArea, TranslatePipe, EmailListForm, Modal],
-  templateUrl: './note-details.html',
-  styleUrl: './note-details.css'
+  templateUrl: './note-details.html'
 })
 export class NoteDetails implements OnInit, OnChanges, OnDestroy {
   @Input() note: NoteModel = {} as NoteModel;
   @Output() noteUpdated = new EventEmitter<NoteModel>();
-  private emailService = inject(SendEmailUseCase);
-  contentControl = new FormControl('');
-  private sub!: Subscription;
-  isModalOpen = false;
   @ViewChild(EmailListForm) emailListForm!: EmailListForm;
+  private emailService = inject(SendEmailUseCase);
+  private sub!: Subscription;
+  contentControl = new FormControl('');
+  isModalOpen = false;
   isLoading = false;
 
   ngOnInit() {
