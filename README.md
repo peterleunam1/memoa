@@ -1,59 +1,64 @@
-# Memoa
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
+# memoa
 
-## Development server
+## Table of Contents
+- [Overview](#overview)
+- [Built With](#built-with)
+- [Features](#features)
+- [Instructions](#instructions)
+- [How to Use](#how-to-use)
 
-To start a local development server, run:
+## Overview
+![All](/public/assets/images/scream1.png)
+![Tags](/public/assets/images/scream2.png)
+![](/public/assets/images/scream3.png)
+![](/public/assets/images/scream4.png)
 
-```bash
-ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Built With
+- [Angular](https://angular.io/)
+- [Font Awesome](https://fontawesome.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Angular Router](https://angular.io/guide/router)
+- [EmailJS](https://www.emailjs.com/)
 
-## Code scaffolding
+## Features
+- All notes
+- Archived notes
+- Tags
+- Share note
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Inspiration
+This application was developed inspired by a [Frontend Mentor challenge](https://www.frontendmentor.io/challenges/note-taking-web-app-773r7bUfOG). It is not an exact replica: some elements were adapted and others were created by me.
 
-```bash
-ng generate component component-name
-```
+## Instructions
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. **Prerequisites**
+   - Ensure that you have [Node.js](https://nodejs.org/es/) installed on your computer.
+   - Ensure that you have [Git](https://git-scm.com/downloads) installed on your computer.
+   - Make sure you have access to the Spotify API (you'll need an API key).
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## How to Use
 
 ```bash
-ng e2e
+   # Clone this repository
+   $ git clone https://github.com/peterleunam1/memoa
+
+   # Navigate to the project folder
+   $ cd memoa
+
+   # Install dependencies
+   $ npm install 
+
+   # Run the app in development mode
+   $ ng serve
+
+   # Build app for production
+   $ ng build --prod
+
+   # Start app
+   $ npm start
+
+   # Run tests
+   $ npm run test
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
